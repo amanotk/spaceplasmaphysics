@@ -1,0 +1,6 @@
+::: {.content-hidden}
+$
+\newcommand{\VS}{V_{\rm S}}
+\newcommand{\VA}{V_{\rm A}}
+$
+:::

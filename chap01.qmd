@@ -37,6 +37,11 @@ format:
 - Simple magnetic diffusion time scale is typically many orders of magnitudes larger than observed dynamical time scales of the system.
 - Should it play no role in nearly collisionless plasmas?
 
+
+![](figures/chap01/substorm.jpg){.absolute height=200 left=50}
+![](figures/chap01/solarflare.png){.absolute height=200 left=450}
+![](figures/chap01/pulsar.jpg){.absolute height=200 left=950}
+
 ---
 
 ### Magnetic Diffusion
@@ -73,7 +78,7 @@ The reconnection rate is defined as the normalized energy conversion rate throug
 
 Energy conversion rate via MRX:
 $$
-\tau_{\rm MRX} = \frac{1}{B^2/8\pi} \frac{d}{dt} \left( \frac{B^2}{8\pi} \right)
+\tau_{\rm MRX}^{-1} = \frac{1}{B^2/8\pi} \frac{d}{dt} \left( \frac{B^2}{8\pi} \right)
 \sim 2 \left( \frac{V_{in}}{\VA} \right) \left( \frac{\VA}{\delta} \right)
 = 2 \left( \frac{V_{in}}{\VA} \right) \tau_{\rm A}^{-1}
 $$
@@ -98,7 +103,8 @@ Classical models of MRX known as Sweet-Parker and Petschek models are based on t
 - steady state ($\partial/\partial t = 0$)
 - incompressible ($\beta \gg 1$ and $\rho \sim {\rm const}$)
 
-Consequence of 2D steady state is that the out-of-plane electric field $E_z$ is constant!
+Consequence of 2D steady state is that the out-of-plane electric field $E_z$ is constant!  
+The constant out-of-plane electric field is often termed "the reconnection electric field" as it is directly related to the reconnection rate.
 
 ---
 
@@ -230,8 +236,7 @@ and $B_n \sim 2 B_{y}^{**} \sim 2 M_{\rm A} B_0$ gives the maximum reconnection 
 $$
 M_{\rm A} \approx \frac{\pi}{8} \frac{1}{\log (M_{\rm A} R_{\rm m})},
 $$
-where $\delta/L \sim M_{\rm A}^{-1} R_{\rm m}^{-1}$. It now depends only very weakly on $R_{\rm m}$. A fast reconnection with $M_{\rm A} \sim 0.01$ is possible for diverse space plasma applications. However, ...
-
+where $\delta/L \sim M_{\rm A}^{-1} R_{\rm m}^{-1}$. It now depends only very weakly on $R_{\rm m}$. A fast reconnection with $M_{\rm A} \sim 0.01$ is possible for diverse space plasma applications. However, it is well known that the Petschek reconnection is not stable for the uniform resistivity. How to achieve a localized resistivity required for the Petschek reconnection is not understood, if it is possible at all.
 
 ---
 
