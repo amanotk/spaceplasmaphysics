@@ -94,6 +94,97 @@ Reconnection with $M_{\rm A} \gtrsim 0.01$ is called "fast", which is typically 
 
 ---
 
+### MHD Waves
+Consider small amplitude perturbations with frequency $\omega$ and wavenumber $k$ for a homogeneous magnetized plasma. Linearized equations are given by
+$$
+\begin{bmatrix}
+v_p^2 - \VS^2 \sin^2 \theta - \VA^2 & 0 & -\VS^2 \sin\theta \cos\theta \\
+0 & v_p^2 - \VA^2 \cos^2 \theta & 0 \\
+-\VS^2 \sin\theta \cos\theta & 0 & v_p^2 - \VS^2 \cos^2\theta
+\end{bmatrix}
+\begin{bmatrix}
+\tilde{v}_x \\ \tilde{v}_y \\ \tilde{v}_z
+\end{bmatrix}
+= 0,
+$$
+where $v_p = \omega/k$ is the phase velocity of the wave. The Alfven speed $\VA$ and sound speed $\VS$ are given respectively by
+$$
+\VA = \frac{B_0}{\sqrt{4 \pi \rho_0}},
+\quad
+\VS = \sqrt{ \frac{\gamma P_0}{\rho_0} }
+$$
+
+
+- Shear Alfven wave
+$$
+v_p^2 = \VA^2 \cos^2 \theta
+$$
+The shear Alfven wave is an incompressible transverse wave driven by the magnetic tension force.
+
+- Fast and slow magnetosonic wave ("fast mode" and "slow mode")
+$$
+v_p^2 = \frac{\VS^2 + \VA^2}{2} \pm
+\frac{\sqrt{(\VA^2 - \VS^2)^2 + 4 \VA^2 \VS^2 \sin^2 \theta}}{2},
+$$
+where the plus and minus signs are for fast and slow magnetosonic modes, respectively. They are both compressional but the phase relations are different.
+  - fast-mode: $\delta p_{gas} \delta p_{mag} > 0$ (both pressures oscillate in the same phase)
+  - slow-mode: $\delta p_{gas} \delta p_{mag} < 0$ (pressures oscillate in the opposite phase)
+
+---
+
+#### Property of MHD Waves: Friedrichs Diagram
+
+Wave propagation speeds are anisotropic with respect to the magnetic field!
+
+![](figures/friedrichs_beta_08.png){.absolute left=50 top=150 width=600}
+![](figures/friedrichs_beta_12.png){.absolute left=700 top=150 width=600}
+
+---
+
+### Ideal MHD Equations in Conservation Form
+
+$$
+\begin{aligned}
+& \text{Mass}
+& \frac{\partial}{\partial t} \left( \rho \right)
+&+ \nabla \cdot \left[
+	\rho \bm{v}
+\right] = 0
+\\
+& \text{Momentum}
+& \frac{\partial}{\partial t}  \left( \rho \bm{v} \right)
+&+ \nabla \cdot \left[
+	\rho \bm{v} \bm{v} +
+	\left( p + \frac{B^2}{8 \pi} \right) \bm{I} -
+	\frac{\bm{B}\bm{B}}{4 \pi}
+\right] = 0
+\\
+& \text{Energy} &
+\frac{\partial}{\partial t} \left(
+	\frac{1}{2} \rho v^2 + \frac{p}{\gamma-1} + \frac{B^2}{8\pi}
+\right)
+&+ \nabla \cdot \left[
+	\left(
+		\frac{1}{2} \rho v^2 +
+		\frac{\gamma}{\gamma-1} p +
+		\frac{B^2}{4\pi}
+	\right) \bm{v}
+	- \bm{v} \cdot \frac{\bm{B}\bm{B}}{4\pi}
+\right] = 0
+\\
+& \text{Magnetic flux} &
+\frac{\partial}{\partial t} \left( \bm{B} \right)
+&+ \nabla \cdot \left[ \bm{v} \bm{B} - \bm{B} \bm{v} \right] = 0
+\end{aligned}
+$$
+
+In addition, the magnetic field is subject to the constraint
+$$
+\nabla \cdot \bm{B} = 0
+$$
+
+---
+
 ## Steady Magnetic Reconnection
 
 Classical models of MRX known as Sweet-Parker and Petschek models are based on the following assumptions:
@@ -147,15 +238,6 @@ The energy conversion rate of Sweet-Parker reconnection $\sim R_{\rm m}^{-1/2}$ 
 
 ---
 
-### Property of MHD Waves: Friedrichs Diagram
-
-Wave propagation speeds are anisotropic with respect to the magnetic field!
-
-![](figures/friedrichs_beta_08.png){.absolute left=50 top=150 width=600}
-![](figures/friedrichs_beta_12.png){.absolute left=700 top=150 width=600}
-
----
-
 #### Physical Mechanism
 - When the magnetic dissipation happens at the diffusion region, fast-mode rarefaction waves propagate outward to induce the inflow toward the diffusion region.
 - Since the phase speed of slow-mode wave is zero at the strictly perpendicular propagation, the inflow must experience a standing slow-mode shock.
@@ -199,13 +281,13 @@ In addition to the trivial relationship $\left[ B_n \right] = 0$, the incompress
 
 Non-trivial relationships are given by the momentum conservation law
 $$
-\left[ \rho \bm{v} \bm{v} - \frac{\bm{B}\bm{B}}{4\pi} \right] = 0
+\bm{n} \cdot \left[ \rho \bm{v} \bm{v} - \frac{\bm{B}\bm{B}}{4\pi} \right] = 0
 \quad \rightarrow \quad
 \rho v_n \left[ \bm{v}_t \right] = \frac{B_n}{4\pi} \left[ \bm{B}_t \right] 
 $$
 and Faraday's law (or the constancy of electric field)
 $$
-\left[ \bm{v} \times \bm{B} \right] = 0
+\bm{n} \times \left[ \bm{v} \times \bm{B} \right] = 0
 \quad \rightarrow \quad
 v_n \left[ \bm{B}_t \right] = B_n \left[ \bm{v}_t \right]
 $$

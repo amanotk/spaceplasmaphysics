@@ -406,6 +406,85 @@ M_{\rm A} = \frac{V_{in}}{V_{\rm A}} \sim \frac{\tau_{\rm A}}{\tau_{\rm MRX}}
 </section>
 <section class="slide level0">
 
+<h3 data-number="1.1.5" id="mhd-waves"><span class="header-section-number">1.1.5</span> MHD Waves</h3>
+<p>Consider small amplitude perturbations with frequency <span class="math inline">\omega</span> and wavenumber <span class="math inline">k</span> for a homogeneous magnetized plasma. Linearized equations are given by <span class="math display">
+\begin{bmatrix}
+v_p^2 - V_{\rm S}^2 \sin^2 \theta - V_{\rm A}^2 &amp; 0 &amp; -V_{\rm S}^2 \sin\theta \cos\theta \\
+0 &amp; v_p^2 - V_{\rm A}^2 \cos^2 \theta &amp; 0 \\
+-V_{\rm S}^2 \sin\theta \cos\theta &amp; 0 &amp; v_p^2 - V_{\rm S}^2 \cos^2\theta
+\end{bmatrix}
+\begin{bmatrix}
+\tilde{v}_x \\ \tilde{v}_y \\ \tilde{v}_z
+\end{bmatrix}
+= 0,
+</span> where <span class="math inline">v_p = \omega/k</span> is the phase velocity of the wave. The Alfven speed <span class="math inline">V_{\rm A}</span> and sound speed <span class="math inline">V_{\rm S}</span> are given respectively by <span class="math display">
+V_{\rm A}= \frac{B_0}{\sqrt{4 \pi \rho_0}},
+\quad
+V_{\rm S}= \sqrt{ \frac{\gamma P_0}{\rho_0} }
+</span></p>
+<ul>
+<li><p>Shear Alfven wave <span class="math display">
+v_p^2 = V_{\rm A}^2 \cos^2 \theta
+</span> The shear Alfven wave is an incompressible transverse wave driven by the magnetic tension force.</p></li>
+<li><p>Fast and slow magnetosonic wave (“fast mode” and “slow mode”) <span class="math display">
+v_p^2 = \frac{V_{\rm S}^2 + V_{\rm A}^2}{2} \pm
+\frac{\sqrt{(V_{\rm A}^2 - V_{\rm S}^2)^2 + 4 V_{\rm A}^2 V_{\rm S}^2 \sin^2 \theta}}{2},
+</span> where the plus and minus signs are for fast and slow magnetosonic modes, respectively. They are both compressional but the phase relations are different.</p>
+<ul>
+<li>fast-mode: <span class="math inline">\delta p_{gas} \delta p_{mag} &gt; 0</span> (both pressures oscillate in the same phase)</li>
+<li>slow-mode: <span class="math inline">\delta p_{gas} \delta p_{mag} &lt; 0</span> (pressures oscillate in the opposite phase)</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level0">
+
+<h4 id="property-of-mhd-waves-friedrichs-diagram">Property of MHD Waves: Friedrichs Diagram</h4>
+<p>Wave propagation speeds are anisotropic with respect to the magnetic field!</p>
+<p><img data-src="figures/friedrichs_beta_08.png" class="absolute" style="top: 150px; left: 50px; width: 600px; "> <img data-src="figures/friedrichs_beta_12.png" class="absolute" style="top: 150px; left: 700px; width: 600px; "></p>
+</section>
+<section class="slide level0">
+
+<h3 data-number="1.1.6" id="ideal-mhd-equations-in-conservation-form"><span class="header-section-number">1.1.6</span> Ideal MHD Equations in Conservation Form</h3>
+<p><span class="math display">
+\begin{aligned}
+&amp; \text{Mass}
+&amp; \frac{\partial}{\partial t} \left( \rho \right)
+&amp;+ \nabla \cdot \left[
+    \rho \bm{v}
+\right] = 0
+\\
+&amp; \text{Momentum}
+&amp; \frac{\partial}{\partial t}  \left( \rho \bm{v} \right)
+&amp;+ \nabla \cdot \left[
+    \rho \bm{v} \bm{v} +
+    \left( p + \frac{B^2}{8 \pi} \right) \bm{I} -
+    \frac{\bm{B}\bm{B}}{4 \pi}
+\right] = 0
+\\
+&amp; \text{Energy} &amp;
+\frac{\partial}{\partial t} \left(
+    \frac{1}{2} \rho v^2 + \frac{p}{\gamma-1} + \frac{B^2}{8\pi}
+\right)
+&amp;+ \nabla \cdot \left[
+    \left(
+        \frac{1}{2} \rho v^2 +
+        \frac{\gamma}{\gamma-1} p +
+        \frac{B^2}{4\pi}
+    \right) \bm{v}
+    - \bm{v} \cdot \frac{\bm{B}\bm{B}}{4\pi}
+\right] = 0
+\\
+&amp; \text{Magnetic flux} &amp;
+\frac{\partial}{\partial t} \left( \bm{B} \right)
+&amp;+ \nabla \cdot \left[ \bm{v} \bm{B} - \bm{B} \bm{v} \right] = 0
+\end{aligned}
+</span></p>
+<p>In addition, the magnetic field is subject to the constraint <span class="math display">
+\nabla \cdot \bm{B} = 0
+</span></p>
+</section>
+<section class="slide level0">
+
 <h2><span class="header-section-number">1.2</span> Steady Magnetic Reconnection</h2>
 <p>Classical models of MRX known as Sweet-Parker and Petschek models are based on the following assumptions:</p>
 <ul>
@@ -454,12 +533,6 @@ V_{out} \approx V_{\rm A}\quad \text{and} \quad M_{\rm A} \approx R_{\rm m}^{-1/
 <img data-src="figures/mrx_petschek.png" width="600" class="r-stretch"></section>
 <section class="slide level0">
 
-<h3 data-number="1.2.3" id="property-of-mhd-waves-friedrichs-diagram"><span class="header-section-number">1.2.3</span> Property of MHD Waves: Friedrichs Diagram</h3>
-<p>Wave propagation speeds are anisotropic with respect to the magnetic field!</p>
-<p><img data-src="figures/friedrichs_beta_08.png" class="absolute" style="top: 150px; left: 50px; width: 600px; "> <img data-src="figures/friedrichs_beta_12.png" class="absolute" style="top: 150px; left: 700px; width: 600px; "></p>
-</section>
-<section class="slide level0">
-
 <h4 id="physical-mechanism">Physical Mechanism</h4>
 <ul>
 <li>When the magnetic dissipation happens at the diffusion region, fast-mode rarefaction waves propagate outward to induce the inflow toward the diffusion region.</li>
@@ -498,11 +571,11 @@ V_{out} \approx V_{\rm A}\quad \text{and} \quad M_{\rm A} \approx R_{\rm m}^{-1/
 <h4 id="approximate-rankine-hugoniot-relations-at-slow-shock">Approximate Rankine-Hugoniot Relations at Slow Shock</h4>
 <p>In addition to the trivial relationship <span class="math inline">\left[ B_n \right] = 0</span>, the incompressible assumption gives <span class="math inline">\left[ \rho \right] = \left[ v_n \right] = 0</span>.</p>
 <p>Non-trivial relationships are given by the momentum conservation law <span class="math display">
-\left[ \rho \bm{v} \bm{v} - \frac{\bm{B}\bm{B}}{4\pi} \right] = 0
+\bm{n} \cdot \left[ \rho \bm{v} \bm{v} - \frac{\bm{B}\bm{B}}{4\pi} \right] = 0
 \quad \rightarrow \quad
 \rho v_n \left[ \bm{v}_t \right] = \frac{B_n}{4\pi} \left[ \bm{B}_t \right]
 </span> and Faraday’s law (or the constancy of electric field) <span class="math display">
-\left[ \bm{v} \times \bm{B} \right] = 0
+\bm{n} \times \left[ \bm{v} \times \bm{B} \right] = 0
 \quad \rightarrow \quad
 v_n \left[ \bm{B}_t \right] = B_n \left[ \bm{v}_t \right]
 </span></p>
