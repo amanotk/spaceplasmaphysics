@@ -500,7 +500,7 @@ The constant out-of-plane electric field is often termed “the reconnection ele
 
 <h3 data-number="1.2.1" id="sweet-parker-model"><span class="header-section-number">1.2.1</span> Sweet-Parker Model</h3>
 
-<img data-src="figures/mrx_sweet_parker.png" width="600" class="r-stretch"></section>
+<img data-src="figures/mrx_sweet_parker.png" width="500" class="r-stretch"></section>
 <section class="slide level0">
 
 <ul>
@@ -530,7 +530,7 @@ V_{out} \approx V_{\rm A}\quad \text{and} \quad M_{\rm A} \approx R_{\rm m}^{-1/
 
 <h3 data-number="1.2.2" id="petschek-model"><span class="header-section-number">1.2.2</span> Petschek Model</h3>
 
-<img data-src="figures/mrx_petschek.png" width="600" class="r-stretch"></section>
+<img data-src="figures/mrx_petschek.png" width="500" class="r-stretch"></section>
 <section class="slide level0">
 
 <h4 id="physical-mechanism">Physical Mechanism</h4>
@@ -675,6 +675,36 @@ F(y) \left( \tilde{A}'' - k^2 \tilde{A} \right) + F''(y) \tilde{A} = 0
 </section>
 <section class="slide level0">
 
+<h3 data-number="1.3.2" id="collisionless-tearing-instability"><span class="header-section-number">1.3.2</span> Collisionless Tearing Instability</h3>
+<h4 id="meandering-motion-near-the-neutral-sheet">Meandering Motion Near the Neutral Sheet</h4>
+<p>Charged particles do not perform a cyclotron motion at the neutral sheet where the magnetic field is nearly zero (changes its polarity from the one side to the other). The particular type of particle motion at the neutral sheet is called meandering motion. The thickness of the meandering layer <span class="math inline">d</span> may be estimated by <span class="math display">
+  d = \sqrt{r_g \lambda},
+</span> where <span class="math inline">r_g = v/\Omega_{0} = v \cdot (m c / q B_0)</span> is the gyroradius defined with the magnetic field strength <span class="math inline">B_0</span> far from the sheet, and <span class="math inline">\lambda</span> is the thickness of the current sheet.</p>
+<h4 id="effective-inertial-resistivity">Effective Inertial Resistivity</h4>
+<p>The effective resistivity <span class="math inline">\eta_\text{eff}</span> in the presence effective collisions with the collision frequency <span class="math inline">\nu_\text{eff}</span> may be given by <span class="math display">
+\eta_\text{eff} = \frac{1}{\sigma_\text{eff}} \approx \frac{m_e}{n e^2} \nu_\text{eff}.
+</span> If we estimate the collision frequency by the typical travel time of thermal electrons over the distance <span class="math inline">\sim 1/k</span>, we have <span class="math inline">\nu_\text{eff} \sim k v_{th,e} \propto T_e^{1/2}</span>. A high temperature plasma has a larger effective resistivity.</p>
+</section>
+<section class="slide level0">
+
+<h4 id="growth-rate-1">Growth Rate</h4>
+<p>The non-adiabatic current may be estimated by the one produced by the meandering particles: <span class="math display">
+\bm{j}_1^\text{non-ad} =
+\begin{cases}
+\sigma_\text{eff} E_1 \quad &amp; |y| &lt; d \\
+0          \quad &amp; |y| &gt; d
+\end{cases}
+</span> Note that <span class="math inline">d</span> is given by the gyroradius and does not satisfy the ordering used in the analysis of the resistive MHD tearing instability.</p>
+<p>We then obtain the growth rate for the collisionless tearing instability: <span class="math display">
+\gamma \tau_{A} \approx
+\left( \frac{r_g}{\lambda} \right)^{3/2}
+\beta_e^{1/2} \left( \frac{m_i}{m_e} \right)^{1/2}
+\left( 1 + \frac{T_i}{T_e} \right)
+\frac{1 - k^2 \lambda^2}{k \lambda}
+</span> It is important to understand that the growth rate is largely dependent on the ratio <span class="math inline">r_g/\lambda</span>, which means that the thin current sheet (with respect to the gyroradius) is required for fast growth of the collisionless tearing instability.</p>
+</section>
+<section class="slide level0">
+
 <h2><span class="header-section-number">1.4</span> Collisionless Magnetic Reconnection</h2>
 <h3 data-number="1.4.1" id="generalized-ohms-law"><span class="header-section-number">1.4.1</span> Generalized Ohm’s Law</h3>
 <p>Equation of motion for the electron fluid: <span class="math display">
@@ -709,69 +739,104 @@ n_e m_e \frac{d}{dt} \bm{v}_e =
 </section>
 <section class="slide level0">
 
-<h3 data-number="1.4.3" id="collisionless-tearing-instability"><span class="header-section-number">1.4.3</span> Collisionless Tearing Instability</h3>
-<h4 id="meandering-motion-near-the-neutral-sheet">Meandering Motion Near the Neutral Sheet</h4>
-<p>Charged particles do not perform a cyclotron motion at the neutral sheet where the magnetic field is nearly zero (changes its polarity from the one side to the other). The particular type of particle motion at the neutral sheet is called meandering motion. The thickness of the meandering layer <span class="math inline">d</span> may be estimated by <span class="math display">
-  d = \sqrt{r_g \lambda},
-</span> where <span class="math inline">r_g = v/\Omega_{0} = v \cdot (m c / q B_0)</span> is the gyroradius defined with the magnetic field strength <span class="math inline">B_0</span> far from the sheet, and <span class="math inline">\lambda</span> is the thickness of the current sheet.</p>
-<h4 id="effective-inertial-resistivity">Effective Inertial Resistivity</h4>
-<p>The effective resistivity <span class="math inline">\eta_\text{eff}</span> in the presence effective collisions with the collision frequency <span class="math inline">\nu_\text{eff}</span> may be given by <span class="math display">
-\eta_\text{eff} = \frac{1}{\sigma_\text{eff}} \approx \frac{m_e}{n e^2} \nu_\text{eff}.
-</span> If we estimate the collision frequency by the typical travel time of thermal electrons over the distance <span class="math inline">\sim 1/k</span>, we have <span class="math inline">\nu_\text{eff} \sim k v_{th,e} \propto T_e^{1/2}</span>. A high temperature plasma has a larger effective resistivity.</p>
-</section>
-<section class="slide level0">
-
-<h4 id="growth-rate-1">Growth Rate</h4>
-<p>The non-adiabatic current may be estimated by the one produced by the meandering particles: <span class="math display">
-\bm{j}_1^\text{non-ad} =
-\begin{cases}
-\sigma_\text{eff} E_1 \quad &amp; |y| &lt; d \\
-0          \quad &amp; |y| &gt; d
-\end{cases}
-</span> Note that <span class="math inline">d</span> is given by the gyroradius and does not satisfy the ordering used in the analysis of the resistive MHD tearing instability.</p>
-<p>We then obtain the growth rate for the collisionless tearing instability: <span class="math display">
-\gamma \tau_{A} \approx
-\left( \frac{r_g}{\lambda} \right)^{3/2}
-\beta_e^{1/2} \left( \frac{m_i}{m_e} \right)^{1/2}
-\left( 1 + \frac{T_i}{T_e} \right)
-\frac{1 - k^2 \lambda^2}{k \lambda}
-</span> It is important to understand that the growth rate is largely dependent on the ratio <span class="math inline">r_g/\lambda</span>, which means that the thin current sheet (with respect to the gyroradius) is required for fast growth of the collisionless tearing instability.</p>
-</section>
-<section class="slide level0">
-
-<h4 id="relation-to-generalized-ohms-law">Relation to Generalized Ohm’s Law</h4>
+<h3 data-number="1.4.3" id="relation-to-collisionless-tearing-instability"><span class="header-section-number">1.4.3</span> Relation to Collisionless Tearing Instability</h3>
 <p>If we assume the idealized situation where magnetic reconnection proceeds quasi-steady manner in 2D, the reconnection electric field at the diffusion region has to be sustained by the term proportional to <span class="math inline">\nabla \cdot \bm{p}_e</span> in Ohm’s law.</p>
 <p>The reconnection electric field is then given by <span class="math display">
-E_z \approx = - \frac{1}{n e}
+E_z \approx - \frac{1}{n e}
 \left( \frac{\partial p_{e,xz}}{\partial x} + \frac{\partial p_{e,yz}}{\partial y} \right).
 </span> The origin of the electric field is associated with the acceleration of meandering electrons in the out-of-plane direction.</p>
 </section>
 <section class="slide level0">
 
-<h4 id="spacecraft-observations">Spacecraft Observations</h4>
-<p>Torbert et al.&nbsp;(2018, Science)</p>
-<p><img data-src="figures/mms-mrx-summary.png" class="absolute" style="top: 70px; left: 50px; height: 650px; "> <img data-src="figures/mms-mrx-vdf1.png" class="absolute" style="top: 70px; left: 650px; height: 325px; "> <img data-src="figures/mms-mrx-vdf2.png" class="absolute" style="top: 400px; left: 650px; height: 325px; "></p>
+<h3 data-number="1.4.4" id="comparison-between-various-simulation-models"><span class="header-section-number">1.4.4</span> Comparison between Various Simulation Models</h3>
+<p>Comparison between various simulation models suggests that the Hall term is the essential physics for fast magnetic reconnection. Note that, however, there have been studies suggesting that the Hall term is not alway necessary to achieve fast reconnection.</p>
+
+<img data-src="figures/gem-mrx.png" width="400" class="r-stretch quarto-figure-center"><p class="caption">Bern et al.&nbsp;(2001, JGR)</p></section>
+<section class="slide level0">
+
+<h3 data-number="1.4.5" id="hall-reconnection"><span class="header-section-number">1.4.5</span> Hall Reconnection</h3>
+<p>Hall term does not directly contribute to the dissipation because <span class="math inline">\bm{j} \cdot (\bm{j} \times \bm{B}) = 0</span>. However, it potentially enhances magnetic reconnection.</p>
+<p>The diffusion region in collisionless reconnection is often characterized by the Hall effect, which signifies the decoupling between ions and electrons. Consequently, the diffusion region is divided into the two regions:</p>
+<ul>
+<li>ion diffusion region (IDR): ions are unmagnetized while electrons are magnetized</li>
+<li>electron diffusion region (EDR): both ions and electrons are unmagnetized</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/hall-mrx-schematic.png" height="400"></p>
+<figcaption>Treumann and Baumjohann (2013)</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/hall-mrx-simulation.png" height="400"></p>
+<figcaption>Pritchett (2001)</figcaption>
+</figure>
+</div>
+</div></div>
 </section>
 <section class="slide level0">
 
-<h4 id="numerical-simulations">Numerical Simulations</h4>
-<p>Bern et al.&nbsp;(2001, JGR)</p>
-<p><img data-src="figures/gem-mrx.png" class="absolute" style="top: 200px; width: 900px; "></p>
-<ul>
-<li>Comparison between different simulation models suggests that the Hall term is the essential physics for fast magnetic reconnection.</li>
-</ul>
+<h3 data-number="1.4.6" id="spacecraft-observation"><span class="header-section-number">1.4.6</span> Spacecraft Observation</h3>
+<h4 id="ion-diffusion-region-idr">Ion Diffusion Region (IDR)</h4>
+<p>The first experimental evidence of Hall reconnection was obtained by Geotail spacecraft in the magnetotail as the decoupling between ions and electrons (Nagai et al.&nbsp;2001, JGR).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/hall-mrx-geotail.png" height="550"></p>
+<figcaption>Geotail observation (Nagai 2021)</figcaption>
+</figure>
+</div>
 </section>
 <section class="slide level0">
 
-<h4 id="hall-mediated-magnetic-reconnection">Hall-mediated Magnetic Reconnection</h4>
-<p>Treumann &amp; Baumjohann (2013, Front. Phys.)</p>
-<ul>
-<li>Hall term does not directly contribute to the dissipation because <span class="math inline">\bm{j} \cdot (\bm{j} \times \bm{B}) = 0</span>.</li>
-<li>However, it potentially enhances reconnection because of the formation of a narrow and fast electron jet in the ion diffusion region that may carry magnetic flux away from the diffusion region efficiently.</li>
-<li>On the other hand, simulation studies suggest that the Hall term is not alway necessary to achieve fast reconnection.</li>
-<li>The Hall magnetic field (or out-of-plane) component is considered as the signature of magnetic reconnection of in-situ spacecraft measurements in space.</li>
-</ul>
-<p><img data-src="figures/hall-mrx-schematic.png" style="position: absolute; left: 50px; top: 350px" width="600"> <img data-src="figures/hall-mrx-simulation.png" style="position: absolute; left: 650px; top: 350px" width="600"></p>
+<h4 id="electron-diffusion-region-edr">Electron Diffusion Region (EDR)</h4>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Observation of symmetric reconnection in the magnetotail region identified the EDR as the region where the dissipation occurs.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/edr-mrx-geotail.png" width="500"></p>
+<figcaption>Geotail observation (Zenitani et al.&nbsp;2012, Treumann and Baumjohann 2013)</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:55%;">
+<p>Polar observation of asymmetric reconnection in the magnetopause region found the EDR as an enhanced non-gyrotropy of the electron pressure tensor.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/edr-mrx-polar.png" width="500"></p>
+<figcaption>Polar observation (Scudder et al.&nbsp;2012)</figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section class="slide level0">
+
+<p>Magnetospheric Multiscale (MMS) mission finally resolved the EDR for asymmetric reconnection in the magnetopause region by Burch et al.&nbsp;(2016) and then symmetric reconnection in the magnetotail by Torbert et al.&nbsp;(2018). Clear identification of the EDR has been performed by observation of detailed electron velcity distribution functions (VDFs) though comparison with fully kinetic simulations (see below).</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/mms-mrx-summary.png" width="450"></p>
+<figcaption>Summary of observation</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/mms-mrx-vdf1.png" width="350"></p>
+<figcaption>Observed electron VDF</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/mms-mrx-vdf2.png" width="350"></p>
+<figcaption>Corresponding VDF from kinetic simulation</figcaption>
+</figure>
+</div>
+</div></div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Space Plasma Physics I (T. Amano)</p>

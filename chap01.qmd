@@ -201,7 +201,7 @@ The constant out-of-plane electric field is often termed "the reconnection elect
 
 ### Sweet-Parker Model
 
-![](figures/mrx_sweet_parker.png){width=600px}
+![](figures/mrx_sweet_parker.png){width=500px}
 
 ---
 
@@ -234,7 +234,7 @@ The energy conversion rate of Sweet-Parker reconnection $\sim R_{\rm m}^{-1/2}$ 
 
 ### Petschek Model
 
-![](figures/mrx_petschek.png){width=600px}
+![](figures/mrx_petschek.png){width=500px}
 
 ---
 
@@ -424,6 +424,46 @@ $$
 $$
 It is faster than simple magnetic diffusion ($\propto R_m^{-1}$), but very slow in high-$R_m$ plasmas.
 
+---
+
+### Collisionless Tearing Instability
+
+#### Meandering Motion Near the Neutral Sheet
+Charged particles do not perform a cyclotron motion at the neutral sheet where the magnetic field is nearly zero (changes its polarity from the one side to the other). The particular type of particle motion at the neutral sheet is called meandering motion. The thickness of the meandering layer $d$ may be estimated by
+$$
+  d = \sqrt{r_g \lambda},
+$$
+where $r_g = v/\Omega_{0} = v \cdot (m c / q B_0)$ is the gyroradius defined with the magnetic field strength $B_0$ far from the sheet, and $\lambda$ is the thickness of the current sheet.
+
+#### Effective Inertial Resistivity
+The effective resistivity $\eta_\text{eff}$ in the presence effective collisions with the collision frequency $\nu_\text{eff}$ may be given by
+$$
+\eta_\text{eff} = \frac{1}{\sigma_\text{eff}} \approx \frac{m_e}{n e^2} \nu_\text{eff}.
+$$
+If we estimate the collision frequency by the typical travel time of thermal electrons over the distance $\sim 1/k$, we have $\nu_\text{eff} \sim k v_{th,e} \propto T_e^{1/2}$. A high temperature plasma has a larger effective resistivity.
+
+---
+
+#### Growth Rate
+The non-adiabatic current may be estimated by the one produced by the meandering particles:
+$$
+\bm{j}_1^\text{non-ad} =
+\begin{cases}
+\sigma_\text{eff} E_1 \quad & |y| < d \\
+0          \quad & |y| > d
+\end{cases}
+$$
+Note that $d$ is given by the gyroradius and does not satisfy the ordering used in the analysis of the resistive MHD tearing instability.
+
+We then obtain the growth rate for the collisionless tearing instability:
+$$
+\gamma \tau_{A} \approx
+\left( \frac{r_g}{\lambda} \right)^{3/2}
+\beta_e^{1/2} \left( \frac{m_i}{m_e} \right)^{1/2}
+\left( 1 + \frac{T_i}{T_e} \right)
+\frac{1 - k^2 \lambda^2}{k \lambda}
+$$
+It is important to understand that the growth rate is largely dependent on the ratio $r_g/\lambda$, which means that the thin current sheet (with respect to the gyroradius) is required for fast growth of the collisionless tearing instability.
 
 ---
 
@@ -472,91 +512,93 @@ Finite residence time of particles in the diffusion region indicates that the en
 
 ---
 
-### Collisionless Tearing Instability
-
-#### Meandering Motion Near the Neutral Sheet
-Charged particles do not perform a cyclotron motion at the neutral sheet where the magnetic field is nearly zero (changes its polarity from the one side to the other). The particular type of particle motion at the neutral sheet is called meandering motion. The thickness of the meandering layer $d$ may be estimated by
-$$
-  d = \sqrt{r_g \lambda},
-$$
-where $r_g = v/\Omega_{0} = v \cdot (m c / q B_0)$ is the gyroradius defined with the magnetic field strength $B_0$ far from the sheet, and $\lambda$ is the thickness of the current sheet.
-
-#### Effective Inertial Resistivity
-The effective resistivity $\eta_\text{eff}$ in the presence effective collisions with the collision frequency $\nu_\text{eff}$ may be given by
-$$
-\eta_\text{eff} = \frac{1}{\sigma_\text{eff}} \approx \frac{m_e}{n e^2} \nu_\text{eff}.
-$$
-If we estimate the collision frequency by the typical travel time of thermal electrons over the distance $\sim 1/k$, we have $\nu_\text{eff} \sim k v_{th,e} \propto T_e^{1/2}$. A high temperature plasma has a larger effective resistivity.
-
----
-
-#### Growth Rate
-The non-adiabatic current may be estimated by the one produced by the meandering particles:
-$$
-\bm{j}_1^\text{non-ad} =
-\begin{cases}
-\sigma_\text{eff} E_1 \quad & |y| < d \\
-0          \quad & |y| > d
-\end{cases}
-$$
-Note that $d$ is given by the gyroradius and does not satisfy the ordering used in the analysis of the resistive MHD tearing instability.
-
-We then obtain the growth rate for the collisionless tearing instability:
-$$
-\gamma \tau_{A} \approx
-\left( \frac{r_g}{\lambda} \right)^{3/2}
-\beta_e^{1/2} \left( \frac{m_i}{m_e} \right)^{1/2}
-\left( 1 + \frac{T_i}{T_e} \right)
-\frac{1 - k^2 \lambda^2}{k \lambda}
-$$
-It is important to understand that the growth rate is largely dependent on the ratio $r_g/\lambda$, which means that the thin current sheet (with respect to the gyroradius) is required for fast growth of the collisionless tearing instability.
-
----
-
-#### Relation to Generalized Ohm's Law
+### Relation to Collisionless Tearing Instability
 If we assume the idealized situation where magnetic reconnection proceeds quasi-steady manner in 2D, the reconnection electric field at the diffusion region has to be sustained by the term proportional to $\nabla \cdot \bm{p}_e$ in Ohm's law.
 
 The reconnection electric field is then given by
 $$
-E_z \approx = - \frac{1}{n e}
+E_z \approx - \frac{1}{n e}
 \left( \frac{\partial p_{e,xz}}{\partial x} + \frac{\partial p_{e,yz}}{\partial y} \right).
 $$
 The origin of the electric field is associated with the acceleration of meandering electrons in the out-of-plane direction.
 
 ---
 
-#### Spacecraft Observations
+### Comparison between Various Simulation Models
 
-Torbert et al. (2018, Science)
+Comparison between various simulation models suggests that the Hall term is the essential physics for fast magnetic reconnection. Note that, however, there have been studies suggesting that the Hall term is not alway necessary to achieve fast reconnection.
 
-![](figures/mms-mrx-summary.png){.absolute height=650 left=50 top=70}
-![](figures/mms-mrx-vdf1.png){.absolute height=325 left=650 top=70}
-![](figures/mms-mrx-vdf2.png){.absolute height=325 left=650 top=400}
+![Bern et al. (2001, JGR)](figures/gem-mrx.png){width=400}
 
 
 ---
 
-#### Numerical Simulations
+### Hall Reconnection
 
-Bern et al. (2001, JGR)
+Hall term does not directly contribute to the dissipation because $\bm{j} \cdot (\bm{j} \times \bm{B}) = 0$. However, it potentially enhances magnetic reconnection.
 
-![](figures/gem-mrx.png){.absolute width=900 top=200}
+The diffusion region in collisionless reconnection is often characterized by the Hall effect, which signifies the decoupling between ions and electrons. Consequently, the diffusion region is divided into the two regions:
 
+  - ion diffusion region (IDR): ions are unmagnetized while electrons are magnetized
+  - electron diffusion region (EDR): both ions and electrons are unmagnetized
 
-- Comparison between different simulation models suggests that the Hall term is the essential physics for fast magnetic reconnection.
+:::: {.columns}
+
+::: {.column width="50%"}
+![Treumann and Baumjohann (2013)](figures/hall-mrx-schematic.png){height=400}
+:::
+
+::: {.column width="50%"}
+![Pritchett (2001)](figures/hall-mrx-simulation.png){height=400}
+:::
+
+::::
 
 ---
 
-#### Hall-mediated Magnetic Reconnection
+### Spacecraft Observation
 
-Treumann & Baumjohann (2013, Front. Phys.)
+#### Ion Diffusion Region (IDR)
 
-- Hall term does not directly contribute to the dissipation because $\bm{j} \cdot (\bm{j} \times \bm{B}) = 0$.
-- However, it potentially enhances reconnection because of the formation of a narrow and fast electron jet in the ion diffusion region that may carry magnetic flux away from the diffusion region efficiently.
-- On the other hand, simulation studies suggest that the Hall term is not alway necessary to achieve fast reconnection.
-- The Hall magnetic field (or out-of-plane) component is considered as the signature of magnetic reconnection of in-situ spacecraft measurements in space.
+The first experimental evidence of Hall reconnection was obtained by Geotail spacecraft in the magnetotail as the decoupling between ions and electrons (Nagai et al. 2001, JGR).
 
-![](figures/hall-mrx-schematic.png){ width=600 style="position: absolute; left: 50px; top: 350px" }
-![](figures/hall-mrx-simulation.png){ width=600 style="position: absolute; left: 650px; top: 350px" }
+![Geotail observation (Nagai 2021)](figures/hall-mrx-geotail.png){height=550}
+
+---
+
+#### Electron Diffusion Region (EDR)
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Observation of symmetric reconnection in the magnetotail region identified the EDR as the region where the dissipation occurs.
+
+![Geotail observation (Zenitani et al. 2012, Treumann and Baumjohann 2013)](figures/edr-mrx-geotail.png){width=500}
+:::
+
+::: {.column width="55%"}
+Polar observation of asymmetric reconnection in the magnetopause region found the EDR as an enhanced non-gyrotropy of the electron pressure tensor.
+
+![Polar observation (Scudder et al. 2012)](figures/edr-mrx-polar.png){width=500}
+:::
+
+::::
+
+---
+
+Magnetospheric Multiscale (MMS) mission finally resolved the EDR for asymmetric reconnection in the magnetopause region by Burch et al. (2016) and then symmetric reconnection in the magnetotail by Torbert et al. (2018). Clear identification of the EDR has been performed by observation of detailed electron velcity distribution functions (VDFs) though comparison with fully kinetic simulations (see below).
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![Summary of observation](figures/mms-mrx-summary.png){width=450}
+:::
+
+::: {.column width="50%"}
+![Observed electron VDF](figures/mms-mrx-vdf1.png){width=350}
 
 
+![Corresponding VDF from kinetic simulation](figures/mms-mrx-vdf2.png){width=350}
+:::
+
+::::
