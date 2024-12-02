@@ -90,19 +90,23 @@ $$
 \left( \frac{E}{\tau_{\rm acc}} N(E) \right) = -
 \frac{N(E)}{\tau_{\rm esc}}
 $$
-with the typical acceleration time $\tau_{\rm acc}$ defined as
-$$
-\frac{1}{\tau_{\rm acc}} \equiv \frac{1}{E} \frac{dE}{dt}.
-$$
+with the typical acceleration time $\tau_{\rm acc}^{-1} \equiv (d E / d t)/E$.
 
-A power-law spectrum is obtained in the steady state only when the acceleration time and the escape time both have the same energy dependence. In this particular case, the steady state solution is given by
+In the simplest case where both the acceleration and escape times are energy-independent, the steady-state solution is given by
 $$
 N(E) = N_0 \left( \frac{E}{E_0} \right)^{-q}
 \quad
-q \equiv \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + 1
+q \equiv 1 + \frac{\tau_{\rm acc}}{\tau_{\rm esc}}.
 $$
-
-Understanding a particle acceleration mechanism to produce a power-law spectrum is essentially to find a specific physical process that gives the acceleration time $\tau_{\rm acc}$ and the escape time $\tau_{\rm esc}$.
+If the time scales are energy-dependent, the spectrum is not a power-law in general. A physically important quantity is the flux of particles escaping from the system, which is given by
+$$
+\frac{\partial \ln (N/\tau_{\rm esc})}{\partial \ln E} = -
+\left(
+  1 + \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + \frac{\partial \ln (\tau_{\rm acc}/\tau_{\rm esc})}{\partial \ln E}
+\right),
+$$
+which gives a power-law only when the ratio between the two time scales is constant.
+Therefore, understanding a particle acceleration mechanism to produce a power-law spectrum is essentially to find a specific physical process that gives the acceleration time $\tau_{\rm acc}$ and the escape time $\tau_{\rm esc}$.
 
 ---
 
@@ -165,7 +169,7 @@ If we *assume* that $\tau_{\rm esc}$ is also independent of energy, the power-la
 
 #### Issues
 1. The spectral index is highly dependent on the free parameter $\tau_{\rm esc}$. Furthermore, if $\tau_{\rm esc}$ is energy dependent (e.g., diffusive escape from the system), the power-law spectrum cannot be reproduced.
-1. The original Fermi's idea considering cosmic ray acceleration in interstellar turbulence (molecular clouds with $V \sim 10 \, {\rm km/s}$, $\lambda_{c} \sim 1 \, {\rm pc}$) indicates that $\tau_{\rm acc} \sim 6 \times 10^{16} {\rm s} \sim 2 \times 10^{9} {\rm yrs}$, which is probably too slow (cf., typical p-p collision loss time: $\sim 10^{15} \, {\rm s}$, cosmic age: $\sim 4 \times 10^{17} \, {\rm s}$.)
+1. The original Fermi's idea considering cosmic-ray acceleration in interstellar turbulence (the velocity of molecular clouds $V \sim 10 \, {\rm km/s}$ and the inter-cloud distance $\lambda_{c} \sim 1 \, {\rm pc}$) indicates that $\tau_{\rm acc} \sim 6 \times 10^{16} {\rm s} \sim 2 \times 10^{9} {\rm yrs}$, which is probably too slow (cf., typical p-p collision loss time: $\sim 10^{15} \, {\rm s}$, cosmic age: $\sim 4 \times 10^{17} \, {\rm s}$.)
 
 ---
 
@@ -206,7 +210,7 @@ $$
 \underbrace{2}_{\textrm{normalization}}
 \int_{0}^{\pi/2} \cos \theta_{+} \,\,
 \underbrace{\cos \theta_{+}}_{\textrm{flux}} \,\,
-\underbrace{\sin \theta_{+}}_{\textrm{Jcobian}} d \theta_{+} =
+\underbrace{\sin \theta_{+}}_{\textrm{Jacobian}} d \theta_{+} =
 2 \int_{0}^{1} \mu^2 d \mu = \frac{2}{3}.
 $$
 The exactly same argument gives $\left< \cos \theta_{-} \right> = -2/3$.

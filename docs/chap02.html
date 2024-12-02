@@ -8,7 +8,7 @@
 <link href="chap02_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="chap02_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="chap02_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>chap02</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,7 +31,7 @@
   </style>
   <link rel="stylesheet" href="chap02_files/libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="lecture-theme.css">
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -46,7 +46,7 @@
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
   <link href="chap02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="chap02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="chap02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -172,7 +172,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -371,8 +372,7 @@
 <figcaption>経済物理学の発見（高安秀樹）</figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section class="slide level0">
 
@@ -416,15 +416,17 @@
 \frac{\partial}{\partial E}
 \left( \frac{E}{\tau_{\rm acc}} N(E) \right) = -
 \frac{N(E)}{\tau_{\rm esc}}
-</span> with the typical acceleration time <span class="math inline">\tau_{\rm acc}</span> defined as <span class="math display">
-\frac{1}{\tau_{\rm acc}} \equiv \frac{1}{E} \frac{dE}{dt}.
-</span></p>
-<p>A power-law spectrum is obtained in the steady state only when the acceleration time and the escape time both have the same energy dependence. In this particular case, the steady state solution is given by <span class="math display">
+</span> with the typical acceleration time <span class="math inline">\tau_{\rm acc}^{-1} \equiv (d E / d t)/E</span>.</p>
+<p>In the simplest case where both the acceleration and escape times are energy-independent, the steady-state solution is given by <span class="math display">
 N(E) = N_0 \left( \frac{E}{E_0} \right)^{-q}
 \quad
-q \equiv \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + 1
-</span></p>
-<p>Understanding a particle acceleration mechanism to produce a power-law spectrum is essentially to find a specific physical process that gives the acceleration time <span class="math inline">\tau_{\rm acc}</span> and the escape time <span class="math inline">\tau_{\rm esc}</span>.</p>
+q \equiv 1 + \frac{\tau_{\rm acc}}{\tau_{\rm esc}}.
+</span> If the time scales are energy-dependent, the spectrum is not a power-law in general. A physically important quantity is the flux of particles escaping from the system, which is given by <span class="math display">
+\frac{\partial \ln (N/\tau_{\rm esc})}{\partial \ln E} = -
+\left(
+  1 + \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + \frac{\partial \ln (\tau_{\rm acc}/\tau_{\rm esc})}{\partial \ln E}
+\right),
+</span> which gives a power-law only when the ratio between the two time scales is constant. Therefore, understanding a particle acceleration mechanism to produce a power-law spectrum is essentially to find a specific physical process that gives the acceleration time <span class="math inline">\tau_{\rm acc}</span> and the escape time <span class="math inline">\tau_{\rm esc}</span>.</p>
 </section>
 <section class="slide level0">
 
@@ -470,7 +472,7 @@ P_{c} \propto \frac{1}{\tau_c} \propto (v + V \cos \theta),
 <h4 id="issues">Issues</h4>
 <ol type="1">
 <li>The spectral index is highly dependent on the free parameter <span class="math inline">\tau_{\rm esc}</span>. Furthermore, if <span class="math inline">\tau_{\rm esc}</span> is energy dependent (e.g., diffusive escape from the system), the power-law spectrum cannot be reproduced.</li>
-<li>The original Fermi’s idea considering cosmic ray acceleration in interstellar turbulence (molecular clouds with <span class="math inline">V \sim 10 \, {\rm km/s}</span>, <span class="math inline">\lambda_{c} \sim 1 \, {\rm pc}</span>) indicates that <span class="math inline">\tau_{\rm acc} \sim 6 \times 10^{16} {\rm s} \sim 2 \times 10^{9} {\rm yrs}</span>, which is probably too slow (cf., typical p-p collision loss time: <span class="math inline">\sim 10^{15} \, {\rm s}</span>, cosmic age: <span class="math inline">\sim 4 \times 10^{17} \, {\rm s}</span>.)</li>
+<li>The original Fermi’s idea considering cosmic-ray acceleration in interstellar turbulence (the velocity of molecular clouds <span class="math inline">V \sim 10 \, {\rm km/s}</span> and the inter-cloud distance <span class="math inline">\lambda_{c} \sim 1 \, {\rm pc}</span>) indicates that <span class="math inline">\tau_{\rm acc} \sim 6 \times 10^{16} {\rm s} \sim 2 \times 10^{9} {\rm yrs}</span>, which is probably too slow (cf., typical p-p collision loss time: <span class="math inline">\sim 10^{15} \, {\rm s}</span>, cosmic age: <span class="math inline">\sim 4 \times 10^{17} \, {\rm s}</span>.)</li>
 </ol>
 </section>
 <section class="slide level0">
@@ -510,7 +512,7 @@ P_{c} \propto \frac{1}{\tau_c} \propto (v + V \cos \theta),
 \underbrace{2}_{\textrm{normalization}}
 \int_{0}^{\pi/2} \cos \theta_{+} \,\,
 \underbrace{\cos \theta_{+}}_{\textrm{flux}} \,\,
-\underbrace{\sin \theta_{+}}_{\textrm{Jcobian}} d \theta_{+} =
+\underbrace{\sin \theta_{+}}_{\textrm{Jacobian}} d \theta_{+} =
 2 \int_{0}^{1} \mu^2 d \mu = \frac{2}{3}.
 </span> The exactly same argument gives <span class="math inline">\left&lt; \cos \theta_{-} \right&gt; = -2/3</span>.</p>
 <p>Therefore, the mean energy gain per one cycle is given by <span class="math display">
@@ -823,8 +825,10 @@ V \frac{\partial}{\partial x} f -
 
 <h2><span class="header-section-number">2.11</span> Galactic Cosmic Rays and Solar Activity</h2>
 
-<img data-src="figures/gcr-sunspot.png" class="r-stretch quarto-figure-center"><p class="caption">height:550px center</p><div class="footer footer-default">
+<img data-src="figures/gcr-sunspot.png" class="r-stretch quarto-figure-center"><p class="caption">height:550px center</p><div class="quarto-auto-generated-content">
+<div class="footer footer-default">
 <p>Space Plasma Physics I (T. Amano)</p>
+</div>
 </div>
 </section>
     </div>
@@ -852,7 +856,6 @@ V \frac{\partial}{\partial x} f -
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1051,18 +1054,7 @@ V \frac{\partial}{\partial x} f -
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1094,11 +1086,50 @@ V \frac{\partial}{\partial x} f -
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1108,8 +1139,17 @@ V \frac{\partial}{\partial x} f -
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1123,7 +1163,11 @@ V \frac{\partial}{\partial x} f -
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
