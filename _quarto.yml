@@ -3,6 +3,9 @@ project:
   render:
     - chap01.qmd
     - chap02.qmd
+  preview:
+    port: 4200
+    watch-inputs: true
 
 execute:
   freeze: auto

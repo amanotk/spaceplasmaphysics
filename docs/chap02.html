@@ -8,7 +8,7 @@
 <link href="chap02_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="chap02_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="chap02_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.57">
+  <meta name="generator" content="quarto-1.3.450">
 
   <title>chap02</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,7 +31,7 @@
   </style>
   <link rel="stylesheet" href="chap02_files/libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="lecture-theme.css">
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -46,7 +46,7 @@
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
   <link href="chap02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="chap02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="chap02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -172,8 +172,7 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    padding-bottom: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -353,16 +352,27 @@
 <li>Space is filled with particles with energies orders of magnitude higher than we normally expect.</li>
 <li>How are they generated and what role do they possibly play in the dynamics?</li>
 </ul>
-
-<img data-src="figures/soho.png" class="r-stretch quarto-figure-center"><p class="caption">height:500px center</p></section>
+<p><img data-src="figures/soho.png" height="500"></p>
+</section>
 <section class="slide level0">
 
 <h3 data-number="2.1.1" id="nonthermal-particle-distribution"><span class="header-section-number">2.1.1</span> Nonthermal Particle Distribution</h3>
 <ul>
-<li>Particle energy distribution in space is not in thermodynamic equilibrium. The energy equipartition theorem is not satisfied in space.</li>
-<li>Power-law distribution is commonly seen both in natural and social systems.</li>
+<li>Particle energy distribution in space is not in thermodynamic equilibrium. The energy equipartition law does not seem to be satisfied.</li>
+<li>A power-law type energy distribution is commonly seen both in natural and social systems.</li>
 </ul>
-<p><img src="figures/cosmic-ray-spectrum.png" height="500px" style="position: absolute; left: 100px; top: 180px"> <img src="figures/corporate-income.png" height="500px" style="position: absolute; left: 600px; top: 180px"></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="figures/cosmic-ray-spectrum.png" height="500"></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/corporate-income.png" height="500"></p>
+<figcaption>経済物理学の発見（高安秀樹）</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level0">
 
@@ -376,24 +386,27 @@
 <li>Magnetic Reconnection
 <ul>
 <li>The magnetic energy is converted to the particle kinetic and thermal energies.</li>
+<li>Various mechanisms have been proposed and discussed, although not that mature as compared to the shock acceleration.</li>
 </ul></li>
 <li>Turbulence
 <ul>
 <li>The turbulent energy is converted to the thermal energy.</li>
+<li>Often invoked as a possible particle acceleration mechanism.</li>
 </ul></li>
 </ul>
 <p>Many of the elementary physical processes are common in all of these applications.</p>
 </section>
 <section class="slide level0">
 
-<h3 data-number="2.1.3" id="solar-energetic-particles-solar-cosmic-ray"><span class="header-section-number">2.1.3</span> Solar Energetic Particles (Solar Cosmic Ray)</h3>
-
-<img data-src="figures/solar-energetic-particle.png" class="r-stretch quarto-figure-center"><p class="caption">height:450px center</p></section>
+<h3 data-number="2.1.3" id="examples"><span class="header-section-number">2.1.3</span> Examples</h3>
+<h4 id="solar-energetic-particles-solar-cosmic-ray">Solar Energetic Particles (Solar Cosmic Ray)</h4>
+<p><img data-src="figures/solar-energetic-particle.png" height="600"></p>
+</section>
 <section class="slide level0">
 
-<h3 data-number="2.1.4" id="cosmic-ray-acceleration-at-supernova-remnant-shocks"><span class="header-section-number">2.1.4</span> Cosmic-ray Acceleration at Supernova Remnant Shocks</h3>
-
-<img data-src="figures/supernova-remnant.png" class="r-stretch quarto-figure-center"><p class="caption">height:450px center</p></section>
+<h4 id="cosmic-ray-acceleration-at-supernova-remnant-shocks">Cosmic-ray Acceleration at Supernova Remnant Shocks</h4>
+<p><img data-src="figures/supernova-remnant.png" height="500"></p>
+</section>
 <section class="slide level0">
 
 <h2><span class="header-section-number">2.2</span> Diffusive Shock Acceleration</h2>
@@ -406,10 +419,10 @@
 </span> with the typical acceleration time <span class="math inline">\tau_{\rm acc}</span> defined as <span class="math display">
 \frac{1}{\tau_{\rm acc}} \equiv \frac{1}{E} \frac{dE}{dt}.
 </span></p>
-<p>A power-law spectrum is obtained in the steady state only when the acceleration time and the escape time both have the same energy dependence: <span class="math display">
-N(E) = N_0 \left( \frac{E}{E_0} \right)^{-p}
+<p>A power-law spectrum is obtained in the steady state only when the acceleration time and the escape time both have the same energy dependence. In this particular case, the steady state solution is given by <span class="math display">
+N(E) = N_0 \left( \frac{E}{E_0} \right)^{-q}
 \quad
-p \equiv \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + 1
+q \equiv \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + 1
 </span></p>
 <p>Understanding a particle acceleration mechanism to produce a power-law spectrum is essentially to find a specific physical process that gives the acceleration time <span class="math inline">\tau_{\rm acc}</span> and the escape time <span class="math inline">\tau_{\rm esc}</span>.</p>
 </section>
@@ -417,9 +430,9 @@ p \equiv \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + 1
 
 <h3 data-number="2.2.2" id="second-order-fermi-acceleration"><span class="header-section-number">2.2.2</span> Second-order Fermi Acceleration</h3>
 <p>The original idea by Fermi was to consider cosmic rays colliding with molecular clouds. We consider a little more general particle acceleration via random collisions with moving magnetic obstacles.</p>
-<p>The conservation of energy in the rest frame of the obstacle (moving with a speed <span class="math inline">V</span>) indicates that the particle energy gain per collision is given by: <span class="math display">
+<p>The conservation of energy in the rest frame of the obstacle (moving with a speed <span class="math inline">V</span> in the observer’s frame) indicates that the particle energy gain per collision is given by: <span class="math display">
 \frac{\Delta E}{E} \sim 2 \frac{V}{c} \cos \theta,
-</span> where <span class="math inline">\theta</span> is the angle between the velocities of the particle and the obstacle. Note that we consider that the particle energy is relativistic <span class="math inline">v \sim c</span>.</p>
+</span> where <span class="math inline">\theta</span> is the angle between the velocities of the particle and the obstacle. Note that we consider that highly relativistic particles <span class="math inline">v \sim c</span>.</p>
 <p>Averaging over <span class="math inline">\theta</span> indicates that there is no net energy gain for the particles.</p>
 
 <img data-src="figures/second-order-fermi.png" class="r-stretch quarto-figure-center"><p class="caption">height:280px center</p></section>
@@ -437,8 +450,8 @@ P_{c} \propto \frac{1}{\tau_c} \propto (v + V \cos \theta),
 \left&lt; \frac{\Delta E}{E} \right&gt;
 &amp;=
 \frac
-    {\int_{-1}^{+1} \frac{\Delta E}{E} \mu (1 + \frac{V}{c} \mu) d \mu}
-    {\int_{-1}^{+1} \mu (1 + \frac{V}{c} \mu) d \mu}
+    {\displaystyle \int_{-1}^{+1} \frac{\Delta E}{E} \mu (1 + \frac{V}{c} \mu) d \mu}
+    {\displaystyle \int_{-1}^{+1} \mu (1 + \frac{V}{c} \mu) d \mu}
     \qquad \mu = \cos \theta
     \\
 &amp;= \frac{2}{3} \left( \frac{V}{c} \right)^2,
@@ -449,22 +462,27 @@ P_{c} \propto \frac{1}{\tau_c} \propto (v + V \cos \theta),
 
 <h4 id="acceleration-time">Acceleration Time</h4>
 <p>The acceleration time may be estimated as <span class="math display">
-\tau_{\rm acc}
+\frac{1}{\tau_{\rm acc}}
 \sim \left( \frac{1}{\tau_{c}} \frac{\Delta E}{E} \right)
 \sim \frac{2}{3} \frac{V^2}{\lambda_c c},
-</span> where <span class="math inline">\tau_{c}</span> is the mean collision time and <span class="math inline">\lambda_{c} \sim c \tau_{c}</span> is the mean free path. This indicates that the acceleration time is independent of energy. If we <em>assume</em> that <span class="math inline">\tau_{\rm esc}</span> is also independent of energy, the power-law spectrum is obtained with its index given by <span class="math inline">q = \tau_{\rm acc}/\tau_{\rm esc} + 1</span>.</p>
+</span> where <span class="math inline">\tau_{c}</span> is the mean collision time and <span class="math inline">\lambda_{c} \sim c \tau_{c}</span> is the mean free path. This indicates that the acceleration time is independent of energy.</p>
+<p>If we <em>assume</em> that <span class="math inline">\tau_{\rm esc}</span> is also independent of energy, the power-law spectrum is obtained with its index given by <span class="math inline">q = \tau_{\rm acc}/\tau_{\rm esc} + 1</span>. Otherwise, the spectrum is not a power-law in general.</p>
 <h4 id="issues">Issues</h4>
 <ol type="1">
 <li>The spectral index is highly dependent on the free parameter <span class="math inline">\tau_{\rm esc}</span>. Furthermore, if <span class="math inline">\tau_{\rm esc}</span> is energy dependent (e.g., diffusive escape from the system), the power-law spectrum cannot be reproduced.</li>
-<li>The original Fermi’s idea considering cosmic ray acceleration in interstellar turbulence (molecular clouds with <span class="math inline">V \sim 10 \, {\rm km/s}</span>, <span class="math inline">\lambda_{c} \sim 1 \, {\rm pc}</span>) indicates that <span class="math inline">\tau_{\rm acc} \sim 6 \times 10^{16} \sim 2 \times 10^{9} {\rm yrs}</span>, which is probably too slow (cf., typical p-p collision loss time: <span class="math inline">\sim 10^{15} \, {\rm s}</span>, cosmic age: <span class="math inline">\sim 4 \times 10^{17} \, {\rm s}</span>.)</li>
+<li>The original Fermi’s idea considering cosmic ray acceleration in interstellar turbulence (molecular clouds with <span class="math inline">V \sim 10 \, {\rm km/s}</span>, <span class="math inline">\lambda_{c} \sim 1 \, {\rm pc}</span>) indicates that <span class="math inline">\tau_{\rm acc} \sim 6 \times 10^{16} {\rm s} \sim 2 \times 10^{9} {\rm yrs}</span>, which is probably too slow (cf., typical p-p collision loss time: <span class="math inline">\sim 10^{15} \, {\rm s}</span>, cosmic age: <span class="math inline">\sim 4 \times 10^{17} \, {\rm s}</span>.)</li>
 </ol>
 </section>
 <section class="slide level0">
 
 <h3 data-number="2.2.3" id="first-order-fermi-acceleration"><span class="header-section-number">2.2.3</span> First-order Fermi Acceleration</h3>
-<p>The first-order Fermi acceleration has been the standard model for the shock acceleration of cosmic rays. The particles gain energy by repeatedly crossing the shock front back and force.</p>
-<p><img data-src="figures/scholer.png" height="400"></p>
-<p><em>Courtesy by M. Scholer</em></p>
+<p>The first-order Fermi acceleration has been the standard model for the shock acceleration of cosmic rays. The particles gain energy by repeatedly crossing the shock front back and force for many times.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/scholer.png" height="350"></p>
+<figcaption>Courtesy by M. Scholer</figcaption>
+</figure>
+</div>
 <h4 id="assumptions">Assumptions</h4>
 <ul>
 <li>The shock is a discontinuous jump in the fluid velocity in the hydrodynamics sense.</li>
@@ -474,14 +492,16 @@ P_{c} \propto \frac{1}{\tau_c} \propto (v + V \cos \theta),
 <section class="slide level0">
 
 <h4 id="mean-energy-gain-1">Mean energy gain</h4>
-<p>The energy gain via a single collision with an irregularity is given by <span class="math inline">\frac{\Delta E}{E} \approx 2 \frac{V}{c} \cos \theta</span>, where <span class="math inline">V = V_1</span> or <span class="math inline">V = V_2</span> denotes the flow speeds in the upstream and downstream assuming that irregularities are moving with the flow.</p>
-<p>Assume that the pitch angle of a particle is <span class="math inline">\theta_{+}</span> for crossing the shock front from upstream to downstream and <span class="math inline">\theta_{-}</span> for downstream to upstream. The energy gain per one cycle (i.e., downstream → upstream → downstream) is given by <span class="math display">
+<p>Consider a relativistic particle with the velocity vector forming an angle <span class="math inline">\theta</span> with respect to the shock normal (pointing toward downstream). The energy gain via a single scattering by an irregularity moving with the velocity <span class="math inline">V</span> parallel to the shock normal is given by <span class="math display">
+\frac{\Delta E}{E} \approx 2 \frac{V}{c} \cos \theta.
+</span> Since we consider the scattering by irregularities moving with the background flow, its velocity is either <span class="math inline">V = V_1</span> (upstream) or <span class="math inline">V = V_2</span> (downstream).</p>
+<p>The energy gain per one cycle (i.e., downstream → upstream → downstream) is given by <span class="math display">
 \frac{\Delta E}{E} \approx
 \underbrace{2 \frac{V_1}{c} \cos \theta_{+}}_
 {\rm upstream \, \cos \theta_{+}&gt;0} +
 \underbrace{2 \frac{V_2}{c} \cos \theta_{-}}_
 {\rm downstream \, \cos \theta_{-}&lt;0}
-</span></p>
+</span> where <span class="math inline">\theta_{+}</span> and <span class="math inline">\theta_{-}</span> are the incident angles for crossing the shock front from upstream to downstream and from downstream to upstream, respectively.</p>
 </section>
 <section class="slide level0">
 
@@ -495,7 +515,7 @@ P_{c} \propto \frac{1}{\tau_c} \propto (v + V \cos \theta),
 </span> The exactly same argument gives <span class="math inline">\left&lt; \cos \theta_{-} \right&gt; = -2/3</span>.</p>
 <p>Therefore, the mean energy gain per one cycle is given by <span class="math display">
 \left&lt; \frac{\Delta E}{E} \right&gt; \approx \frac{4}{3} \frac{V_1 - V_2}{c},
-</span> which is first order in <span class="math inline">V/c</span> The first-order energy gain remains finite because of <span class="math inline">V_1 \neq V_2</span> across the shock front. The positive energy gain <span class="math inline">\Delta E &gt; 0</span> is a consequence of the compression at the hydrodynamic shock.</p>
+</span> which is first order in <span class="math inline">V/c</span>. In contrast to the second-order Fermi mechanism, the first-order contribution remains finite because of the systematic jump in the flow velocity across the shock front (i.e., <span class="math inline">V_1 \neq V_2</span>). The positive energy gain <span class="math inline">\Delta E &gt; 0</span> is a consequence of the compression at the hydrodynamic shock.</p>
 </section>
 <section class="slide level0">
 
@@ -506,29 +526,35 @@ P_{c} \propto \frac{1}{\tau_c} \propto (v + V \cos \theta),
 \quad \rightarrow \quad
 \left&lt; E_{l} \right&gt; = \left&lt; E_{0} \right&gt;
 \left( 1 + \frac{4}{3} \frac{V_1 - V_2}{c} \right)^{l}
-</span> (The angle blacket <span class="math inline">\left&lt; \right&gt;</span> will be omitted henceforth.)</p>
+</span> The angle blacket <span class="math inline">\left&lt; \right&gt;</span> will be omitted henceforth.</p>
 <p>Let us consider the escape probability of particles from the system. The escape probability per cycle in the downstream is given by: <span class="math display">
 \begin{aligned}
 P_{\rm esc} &amp;=
 \frac{\text{flux toward far downstream}}{\text{flux from upstream to downstream}}
 \\
 &amp;=
-\frac{N V_2}
-{\frac{1}{4\pi}
+\frac
+{\displaystyle N V_2}
+{\displaystyle \frac{1}{4\pi}
 \int_{0}^{2\pi} d \phi
   \int_{0}^{\pi/2} \sin\theta d \theta \, N c \cos\theta}
 = \frac{4 V_2}{c}.
 \end{aligned}
-</span> Note that we ignore particle escape toward far upstream.</p>
-<!--
-![height:180px](2021-08-11-10-20-00.png)
--->
+</span> Note that we ignore the particle escape toward far upstream.</p>
 </section>
 <section class="slide level0">
 
-<p>Probability that a particle remains in the vicinity of the shock after <span class="math inline">l</span> cycle: <span class="math inline">P_{l} = (1 - P_{\rm esc})^{l} = \left( 1 - \frac{4 V_2}{c} \right)^{l}</span>.</p>
-<p>$$ P_{l} = = {<em>{E_l}^{} N(E’) dE’} {</em>{0}^{} N(E’) dE’}</p>
-<p>N(E) , $$ where <span class="math inline">N(E) dE</span> is the number of particle in the energy interval: <span class="math inline">E \sim E + dE</span>.</p>
+<p>The probability that a particle remains in the vicinity of the shock after <span class="math inline">l</span> cycle is given by <span class="math inline">P_{l} = (1 - P_{\rm esc})^{l} = \left( 1 - \frac{4 V_2}{c} \right)^{l}</span>.</p>
+<p>This probability may be related to the energy spectrum as follows: <span class="math display">
+P_{l} =
+\frac{\text{number of particles with} \, E \geq E_{l}}{\text{total number of particles}}
+=
+\frac
+{\int_{E_l}^{\infty} N(E') dE'}
+{\int_{0}^{\infty} N(E') dE'}
+\quad \rightarrow \quad
+N(E) \propto \frac{d P_{l} (E)}{d E},
+</span> where <span class="math inline">N(E) dE</span> is the number of particle in the energy interval: <span class="math inline">E \sim E + dE</span>.</p>
 <p>The relationship between <span class="math inline">P_l</span> and <span class="math inline">E_l</span> is obtained as follows <span class="math display">
 \frac
 {\ln \left( E_l/E_0 \right) }
@@ -554,7 +580,7 @@ q = \frac{3 V_2}{V_1 - V_2} + 1 = \frac{V_1 + 2 V_2}{V_1 - V_2} = \frac{r + 2}{r
 <ul>
 <li>Since <span class="math inline">r \rightarrow 4</span> at a strong shock with the specific heat ratio <span class="math inline">\gamma = 5/3</span>, we obtain a universal spectral form: <span class="math inline">q \rightarrow 2</span>.</li>
 <li>The spectral index does not depend details of scattering/turbulence properties and simply determined by the hydrodynamics of the background fluid.</li>
-<li>The canonical spectrum <span class="math inline">q = 2</span> is close to (but not exactly the same as) observed cosmic ray spectral index when taken into account a spectral steepening (via diffusive escape) during propagation from the source to the observer.</li>
+<li>The canonical spectrum <span class="math inline">q = 2</span> is close to (but not exactly the same as) the observed cosmic ray spectral index when taken into account a spectral steepening (via diffusive escape) during propagation from the source to the observer.</li>
 </ul>
 </section>
 <section class="slide level0">
@@ -797,10 +823,8 @@ V \frac{\partial}{\partial x} f -
 
 <h2><span class="header-section-number">2.11</span> Galactic Cosmic Rays and Solar Activity</h2>
 
-<img data-src="figures/gcr-sunspot.png" class="r-stretch quarto-figure-center"><p class="caption">height:550px center</p><div class="quarto-auto-generated-content">
-<div class="footer footer-default">
+<img data-src="figures/gcr-sunspot.png" class="r-stretch quarto-figure-center"><p class="caption">height:550px center</p><div class="footer footer-default">
 <p>Space Plasma Physics I (T. Amano)</p>
-</div>
 </div>
 </section>
     </div>
@@ -828,6 +852,7 @@ V \frac{\partial}{\partial x} f -
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
+'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1026,7 +1051,18 @@ V \frac{\partial}{\partial x} f -
         }
         return false;
       }
-      const onCopySuccess = function(e) {
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1058,50 +1094,11 @@ V \frac{\partial}{\partial x} f -
         }, 1000);
         // clear code selection
         e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
       });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-        var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-            // undo the damage that might have been done by quarto-nav.js in the case of
-            // links that we want to consider external
-            if (link.dataset.originalHref !== undefined) {
-              link.href = link.dataset.originalHref;
-            }
-          }
-        }
-      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      function tippyHover(el, contentFn) {
         const config = {
           allowHTML: true,
+          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1111,17 +1108,8 @@ V \frac{\partial}{\partial x} f -
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start',
+          placement: 'bottom-start'
         };
-        if (contentFn) {
-          config.content = contentFn;
-        }
-        if (onTriggerFn) {
-          config.onTrigger = onTriggerFn;
-        }
-        if (onUntriggerFn) {
-          config.onUntrigger = onUntriggerFn;
-        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1135,11 +1123,7 @@ V \frac{\partial}{\partial x} f -
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          if (note) {
-            return note.innerHTML;
-          } else {
-            return "";
-          }
+          return note.innerHTML;
         });
       }
       const findCites = (el) => {

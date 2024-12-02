@@ -26,17 +26,26 @@ format:
 - Space is filled with particles with energies orders of magnitude higher than we normally expect.
 - How are they generated and what role do they possibly play in the dynamics?
 
-![height:500px center](figures/soho.png)
+![](figures/soho.png){height=500}
 
 ---
 
 ### Nonthermal Particle Distribution
 
-- Particle energy distribution in space is not in thermodynamic equilibrium. The energy equipartition theorem is not satisfied in space.
-- Power-law distribution is commonly seen both in natural and social systems.
+- Particle energy distribution in space is not in thermodynamic equilibrium. The energy equipartition law does not seem to be satisfied.
+- A power-law type energy distribution is commonly seen both in natural and social systems.
 
-<img src="figures/cosmic-ray-spectrum.png" height="500px" style="position: absolute; left: 100px; top: 180px"/>
-<img src="figures/corporate-income.png" height="500px" style="position: absolute; left: 600px; top: 180px"/>
+:::: {.columns}
+
+::: {.column width="50%"}
+![](figures/cosmic-ray-spectrum.png){height=500}
+:::
+
+::: {.column width="50%"}
+![経済物理学の発見（高安秀樹）](figures/corporate-income.png){height=500}
+:::
+
+::::
 
 
 ---
@@ -48,22 +57,25 @@ format:
   - The "standard model" for the cosmic-ray acceleration.
 - Magnetic Reconnection
   - The magnetic energy is converted to the particle kinetic and thermal energies.
+  - Various mechanisms have been proposed and discussed, although not that mature as compared to the shock acceleration.
 - Turbulence
   - The turbulent energy is converted to the thermal energy.
+  - Often invoked as a possible particle acceleration mechanism.
 
 Many of the elementary physical processes are common in all of these applications.
 
 ---
 
-### Solar Energetic Particles (Solar Cosmic Ray)
+### Examples
+#### Solar Energetic Particles (Solar Cosmic Ray)
 
-![height:450px center](figures/solar-energetic-particle.png)
+![](figures/solar-energetic-particle.png){height=600}
 
 ---
 
-### Cosmic-ray Acceleration at Supernova Remnant Shocks
+#### Cosmic-ray Acceleration at Supernova Remnant Shocks
 
-![height:450px center](figures/supernova-remnant.png)
+![](figures/supernova-remnant.png){height=500}
 
 ---
 
@@ -83,11 +95,11 @@ $$
 \frac{1}{\tau_{\rm acc}} \equiv \frac{1}{E} \frac{dE}{dt}.
 $$
 
-A power-law spectrum is obtained in the steady state only when the acceleration time and the escape time both have the same energy dependence:
+A power-law spectrum is obtained in the steady state only when the acceleration time and the escape time both have the same energy dependence. In this particular case, the steady state solution is given by
 $$
-N(E) = N_0 \left( \frac{E}{E_0} \right)^{-p}
+N(E) = N_0 \left( \frac{E}{E_0} \right)^{-q}
 \quad
-p \equiv \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + 1
+q \equiv \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + 1
 $$
 
 Understanding a particle acceleration mechanism to produce a power-law spectrum is essentially to find a specific physical process that gives the acceleration time $\tau_{\rm acc}$ and the escape time $\tau_{\rm esc}$.
@@ -98,11 +110,11 @@ Understanding a particle acceleration mechanism to produce a power-law spectrum 
 
 The original idea by Fermi was to consider cosmic rays colliding with molecular clouds. We consider a little more general particle acceleration via random collisions with moving magnetic obstacles.
 
-The conservation of energy in the rest frame of the obstacle (moving with a speed $V$) indicates that the particle energy gain per collision is given by:
+The conservation of energy in the rest frame of the obstacle (moving with a speed $V$ in the observer's frame) indicates that the particle energy gain per collision is given by:
 $$
 \frac{\Delta E}{E} \sim 2 \frac{V}{c} \cos \theta,
 $$
-where $\theta$ is the angle between the velocities of the particle and the obstacle. Note that we consider that the particle energy is relativistic $v \sim c$.
+where $\theta$ is the angle between the velocities of the particle and the obstacle. Note that we consider that highly relativistic particles $v \sim c$.
 
 Averaging over $\theta$ indicates that there is no net energy gain for the particles.
 
@@ -128,8 +140,8 @@ $$
 \left< \frac{\Delta E}{E} \right>
 &=
 \frac
-	{\int_{-1}^{+1} \frac{\Delta E}{E} \mu (1 + \frac{V}{c} \mu) d \mu}
-	{\int_{-1}^{+1} \mu (1 + \frac{V}{c} \mu) d \mu}
+	{\displaystyle \int_{-1}^{+1} \frac{\Delta E}{E} \mu (1 + \frac{V}{c} \mu) d \mu}
+	{\displaystyle \int_{-1}^{+1} \mu (1 + \frac{V}{c} \mu) d \mu}
 	\qquad \mu = \cos \theta
 	\\
 &= \frac{2}{3} \left( \frac{V}{c} \right)^2,
@@ -142,25 +154,25 @@ which is second order in $V/c$. Particles in magnetic turbulence will continuous
 #### Acceleration Time
 The acceleration time may be estimated as
 $$
-\tau_{\rm acc}
+\frac{1}{\tau_{\rm acc}}
 \sim \left( \frac{1}{\tau_{c}} \frac{\Delta E}{E} \right)
 \sim \frac{2}{3} \frac{V^2}{\lambda_c c},
 $$
 where $\tau_{c}$ is the mean collision time and $\lambda_{c} \sim c \tau_{c}$ is the mean free path.
-This indicates that the acceleration time is independent of energy. If we *assume* that $\tau_{\rm esc}$ is also independent of energy, the power-law spectrum is obtained with its index given by $q = \tau_{\rm acc}/\tau_{\rm esc} + 1$.
+This indicates that the acceleration time is independent of energy.
+
+If we *assume* that $\tau_{\rm esc}$ is also independent of energy, the power-law spectrum is obtained with its index given by $q = \tau_{\rm acc}/\tau_{\rm esc} + 1$. Otherwise, the spectrum is not a power-law in general.
 
 #### Issues
 1. The spectral index is highly dependent on the free parameter $\tau_{\rm esc}$. Furthermore, if $\tau_{\rm esc}$ is energy dependent (e.g., diffusive escape from the system), the power-law spectrum cannot be reproduced.
-1. The original Fermi's idea considering cosmic ray acceleration in interstellar turbulence (molecular clouds with $V \sim 10 \, {\rm km/s}$, $\lambda_{c} \sim 1 \, {\rm pc}$) indicates that $\tau_{\rm acc} \sim 6 \times 10^{16} \sim 2 \times 10^{9} {\rm yrs}$, which is probably too slow (cf., typical p-p collision loss time: $\sim 10^{15} \, {\rm s}$, cosmic age: $\sim 4 \times 10^{17} \, {\rm s}$.)
+1. The original Fermi's idea considering cosmic ray acceleration in interstellar turbulence (molecular clouds with $V \sim 10 \, {\rm km/s}$, $\lambda_{c} \sim 1 \, {\rm pc}$) indicates that $\tau_{\rm acc} \sim 6 \times 10^{16} {\rm s} \sim 2 \times 10^{9} {\rm yrs}$, which is probably too slow (cf., typical p-p collision loss time: $\sim 10^{15} \, {\rm s}$, cosmic age: $\sim 4 \times 10^{17} \, {\rm s}$.)
 
 ---
 
 ### First-order Fermi Acceleration
-The first-order Fermi acceleration has been the standard model for the shock acceleration of cosmic rays. The particles gain energy by repeatedly crossing the shock front back and force.
+The first-order Fermi acceleration has been the standard model for the shock acceleration of cosmic rays. The particles gain energy by repeatedly crossing the shock front back and force for many times.
 
-![](figures/scholer.png){height=400}
-
-*Courtesy by M. Scholer*
+![Courtesy by M. Scholer](figures/scholer.png){height=350}
 
 #### Assumptions
 - The shock is a discontinuous jump in the fluid velocity in the hydrodynamics sense.
@@ -170,9 +182,13 @@ The first-order Fermi acceleration has been the standard model for the shock acc
 
 #### Mean energy gain
 
-The energy gain via a single collision with an irregularity is given by $\frac{\Delta E}{E} \approx 2 \frac{V}{c} \cos \theta$, where $V = V_1$ or $V = V_2$ denotes the flow speeds in the upstream and downstream assuming that irregularities are moving with the flow.
+Consider a relativistic particle with the velocity vector forming an angle $\theta$ with respect to the shock normal (pointing toward downstream). The energy gain via a single scattering by an irregularity moving with the velocity $V$ parallel to the shock normal is given by
+$$
+\frac{\Delta E}{E} \approx 2 \frac{V}{c} \cos \theta.
+$$
+Since we consider the scattering by irregularities moving with the background flow, its velocity is either $V = V_1$ (upstream) or $V = V_2$ (downstream).
 
-Assume that the pitch angle of a particle is $\theta_{+}$ for crossing the shock front from upstream to downstream and $\theta_{-}$ for downstream to upstream. The energy gain per one cycle (i.e., downstream → upstream → downstream) is given by
+The energy gain per one cycle (i.e., downstream → upstream → downstream) is given by
 $$
 \frac{\Delta E}{E} \approx
 \underbrace{2 \frac{V_1}{c} \cos \theta_{+}}_
@@ -180,6 +196,7 @@ $$
 \underbrace{2 \frac{V_2}{c} \cos \theta_{-}}_
 {\rm downstream \, \cos \theta_{-}<0}
 $$
+where $\theta_{+}$ and $\theta_{-}$ are the incident angles for crossing the shock front from upstream to downstream and from downstream to upstream, respectively.
 
 ---
 
@@ -198,7 +215,7 @@ Therefore, the mean energy gain per one cycle is given by
 $$
 \left< \frac{\Delta E}{E} \right> \approx \frac{4}{3} \frac{V_1 - V_2}{c},
 $$
-which is first order in $V/c$ The first-order energy gain remains finite because of $V_1 \neq V_2$ across the shock front. The positive energy gain $\Delta E > 0$ is a consequence of the compression at the hydrodynamic shock.
+which is first order in $V/c$. In contrast to the second-order Fermi mechanism, the first-order contribution remains finite because of the systematic jump in the flow velocity across the shock front (i.e., $V_1 \neq V_2$). The positive energy gain $\Delta E > 0$ is a consequence of the compression at the hydrodynamic shock.
 
 ---
 
@@ -212,7 +229,7 @@ $$
 \left< E_{l} \right> = \left< E_{0} \right>
 \left( 1 + \frac{4}{3} \frac{V_1 - V_2}{c} \right)^{l}
 $$
-(The angle blacket $\left< \right>$ will be omitted henceforth.)
+The angle blacket $\left< \right>$ will be omitted henceforth.
 
 Let us consider the escape probability of particles from the system. The escape probability per cycle in the downstream is given by:
 $$
@@ -221,23 +238,22 @@ P_{\rm esc} &=
 \frac{\text{flux toward far downstream}}{\text{flux from upstream to downstream}}
 \\
 &=
-\frac{N V_2}
-{\frac{1}{4\pi}
+\frac
+{\displaystyle N V_2}
+{\displaystyle \frac{1}{4\pi}
  \int_{0}^{2\pi} d \phi
   \int_{0}^{\pi/2} \sin\theta d \theta \, N c \cos\theta}
 = \frac{4 V_2}{c}.
 \end{aligned}
 $$
-Note that we ignore particle escape toward far upstream.
+Note that we ignore the particle escape toward far upstream.
 
-<!--
-![height:180px](2021-08-11-10-20-00.png)
--->
 
 ---
 
-Probability that a particle remains in the vicinity of the shock after $l$ cycle: $P_{l} = (1 - P_{\rm esc})^{l} = \left( 1 - \frac{4 V_2}{c} \right)^{l}$.
+The probability that a particle remains in the vicinity of the shock after $l$ cycle is given by $P_{l} = (1 - P_{\rm esc})^{l} = \left( 1 - \frac{4 V_2}{c} \right)^{l}$.
 
+This probability may be related to the energy spectrum as follows:
 $$
 P_{l} =
 \frac{\text{number of particles with} \, E \geq E_{l}}{\text{total number of particles}}
@@ -245,7 +261,6 @@ P_{l} =
 \frac
 {\int_{E_l}^{\infty} N(E') dE'}
 {\int_{0}^{\infty} N(E') dE'}
-
 \quad \rightarrow \quad
 N(E) \propto \frac{d P_{l} (E)}{d E},
 $$
@@ -279,7 +294,7 @@ where $r = V_1/V_2$ is the shock compression ratio.
 
 - Since $r \rightarrow 4$ at a strong shock with the specific heat ratio $\gamma = 5/3$, we obtain a universal spectral form: $q \rightarrow 2$.
 - The spectral index does not depend details of scattering/turbulence properties and simply determined by the hydrodynamics of the background fluid.
-- The canonical spectrum $q = 2$ is close to (but not exactly the same as) observed cosmic ray spectral index when taken into account a spectral steepening (via diffusive escape) during propagation from the source to the observer.
+- The canonical spectrum $q = 2$ is close to (but not exactly the same as) the observed cosmic ray spectral index when taken into account a spectral steepening (via diffusive escape) during propagation from the source to the observer.
 
 
 ---
