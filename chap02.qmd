@@ -305,6 +305,7 @@ where $r = V_1/V_2$ is the shock compression ratio.
 
 ### Random Walk and Diffusion in Space
 Particles randomly scattered by turbulence perform random walk. The simplest model considers particles moving with a speed $c$ either in positive or negative directions change its direction randomly every $\tau_{c}$. The resulting particle distribution is described by the binomial distribution. After $n = t/\tau_{c}$ scatterings, we have
+
 - mean: $\left< \Delta x \right> = 0$
 - variance: $\left < \Delta x^2 \right> = n \lambda_{c}^2 = \frac{t}{\tau_c} (c \tau_{c})^2 \equiv 2 \kappa t, \,$ where $\kappa$ is the diffusion coefficient.
 
@@ -320,7 +321,90 @@ f(x) = A \exp \left(\frac{x}{\kappa/V} \right) + B,
 $$
 where $A$ and $B$ are integration constants to be determined by the boundary condition. This indicates that the typical length scale is given by $l_{\rm diff} = \kappa / V$, which is called the diffusion length.
 
-The first-order particle acceleration at shock waves described under the diffusion approximation is also known as diffusive shock acceleration (DSA).
+---
+
+### Adiabatic Energy Gain
+It is possible to show that the momentum gain of particles in a finite flow divergence $\nabla \cdot \boldsymbol{V} \neq 0$ is given by
+$$
+\frac{1}{p} \frac{d p}{d t} = -
+\frac{1}{3} \nabla \cdot \boldsymbol{V}
+$$
+for both relativistic and non-relativistic particles.
+
+We then finally obtain the following diffusion-convection equation:
+$$
+\frac{\partial}{\partial t} f +
+V \frac{\partial}{\partial x} f -
+\frac{1}{3} \frac{\partial V}{\partial x} \frac{\partial f}{\partial \ln p}=
+\frac{\partial}{\partial x}
+\left[ \kappa \frac{\partial}{\partial x} f \right],
+$$
+which describes the transport of energetic particles in a turbulent plasma.
+
+---
+
+### Steady-state Solution at Discontinuous Shock Waves
+Consider the simplest case where the diffusion coefficient is spatially constant in the upstream and downstream regions
+$$
+V =
+\begin{cases}
+& V_1 \quad & \text{for} \quad x < 0
+\\
+& V_2 \quad & \text{for} \quad x > 0
+\end{cases}
+\quad \quad \text{and} \quad \quad
+\kappa =
+\begin{cases}
+& \kappa_1 (p) \quad & \text{for} \quad x < 0
+\\
+& \kappa_2 (p) \quad & \text{for} \quad x > 0
+\end{cases}
+$$
+
+We take the boundary condition such that $f \rightarrow 0$ for $x \rightarrow - \infty$ (far upstream), and $\partial f/\partial x \rightarrow 0$ for $x \rightarrow + \infty$ (far downstream). We can then write the solution as follows:
+$$
+f(x, p) =
+\begin{cases}
+& A_1(p) \exp \left( \frac{x}{\kappa_1/V_1} \right) \quad & \text{for} \quad x < 0
+\\
+& A_2(p) \quad & \text{for} \quad x > 0
+\end{cases},
+$$
+where $A_1(p)$ and $A_2(p)$ are momentum-dependent functions yet to be determined. By further imposing the continuity of the distribution function at the shock front, we see that $A_1(p) = A_2(p) \equiv f_0 (p)$.
+
+---
+
+Let us consider a yet another boundary condition by taking the integral of the diffusion-convection equation across the shock front:
+$$
+\lim_{\epsilon \rightarrow 0} \int_{-\epsilon}^{+\epsilon}
+\left[
+  V \frac{\partial f}{\partial x} -
+  \frac{1}{3} \frac{\partial V}{\partial x} \frac{\partial f}{\partial \ln p} -
+  \frac{\partial}{\partial x} \left( \kappa \frac{\partial f}{\partial x} \right)
+\right] dx = 0,
+\\
+\Rightarrow
+- \frac{1}{3} (V_2 - V_1) \frac{\partial f}{\partial \ln p}
+\Bigg|_{x=0} -
+\left[
+  \kappa \frac{\partial f}{\partial x}
+\right]_{-0}^{+0} = 0.
+$$
+
+We then immediately obtain
+$$
+\ln f_0(p) = - \frac{3 V_1}{V_1 - V_2} \ln p,
+$$
+or
+$$
+f_0(p) \propto p^{\displaystyle - \frac{3 r}{r - 1}}
+\quad \text{where} \quad r = V_1/V_2.
+$$
+For relativistic particles $E \sim p$, we have
+$$
+N(E) \propto 4 \pi p^2 f_0(p) \propto E^{-q} \quad \text{with} \quad q = \frac{r + 2}{r - 1},
+$$
+which is consistent with the result obtained based on the single particle picture.
 
 ---
 
@@ -341,21 +425,21 @@ $$
 \sim \frac{3}{V_1 - V_2} \left( \frac{\kappa_1}{V_1} + \frac{\kappa_2}{V_2} \right).
 $$
 
-Note that the escape time may also be estimated by
+Notice that the escape time may also be estimated by
 $$
 \tau_{\rm esc} \sim \frac{1}{V_2} \left( \frac{\kappa_1}{V_1} + \frac{\kappa_2}{V_2} \right),
 $$
 which gives the spectral index
 $$
-p = \frac{\tau_{\rm acc}}{\tau_{\rm esc}} + 1 = \frac{V_1 + 2 V_2}{V_1 - V_2}.
+q = 1 + \frac{\tau_{\rm acc}}{\tau_{\rm esc}} = \frac{r + 2}{r - 1}.
 $$
-We see that the spectral index is consistent with that obtained previously with the single particle picture.
+This confirms that the idea of the box model applies to the shock acceleration problem as well.
 
 ---
 
 ### Maximum energy
 
-The acceleration time explicitly depends on the diffusion coefficient, which is not easily be estimated.
+The acceleration time explicitly depends on the diffusion coefficient, which is not easily be estimated in general.
 
 To proceed further, we use a phenomenological "Bohm-like" diffusion coefficient:
 $$
@@ -380,7 +464,7 @@ Note that the estimate is written in a form: (charge) $\times$ (electric field) 
 
 ---
 
-## Application to Supernova Remnants
+### Application to Supernova Remnants
 The maximum energy by the first-order Fermi acceleration at SNR shocks is smaller than the knee energy ($\sim 10^{15.5}$ eV) by at least one order of magnitude.
 $$
 E_{\rm max} \sim
@@ -392,11 +476,11 @@ E_{\rm max} \sim
 \, \text{[eV]}
 $$
 
-![height:440px center](figures/snr-shock.png)
+![](figures/snr-shock.png){height=450}
 
 ---
 
-### Application to Solar Corona (Ground Level Enhancement)
+### Application to Coronal Shocks (Ground Level Enhancement)
 Solar protons of GeV energies cause the so-called Ground Level Enhancements (GLEs) measured at Earth. GLEs seem to be produced by a shock wave propagating near the sun. The maximum energy may be estiamted as:
 $$
 E_{\rm max} \sim
@@ -408,7 +492,7 @@ E_{\rm max} \sim
 \, \text{[eV]}
 $$
 
-![height:440px center](figures/gle-coronal-shock.png)
+![](figures/gle-coronal-shock.png){height=450}
 
 ---
 
@@ -416,19 +500,13 @@ $$
 
 Since the maximum energy obtained by DSA is proportional to $V B L$ (shock speed, magnetic field, and system size), we can consider that objects with large magnetic field strength and system size are possible sources of cosmic rays in the universe.
 
-![height:500px center](figures/hillas-diagram.png)
+![](figures/hillas-diagram.png){height=500}
 
 ---
 
-<!--
-_class: title
--->
+## Pitch-angle Scattering and Spatial Diffusion
 
-## Pitch-angle Scattering and Diffusion-Convection Equation
-
----
-
-### Pitch-angle Scattering
+### Alfvenic Waves
 Let us consider a charged-particle with a charge of $q$ and a mass of $m$ interacting with a circularly polarized parallel propagating Alfven wave, which is given by
 $$
 \begin{cases}
@@ -451,11 +529,11 @@ $$
 This is an exact solution for MHD equations even with a finite amplitude. We define the phase of the wave by $\psi = k z - \omega t$.
 
 
-![height:350px center](figures/circularly-polarized-wave.png)
+![](figures/circularly-polarized-wave.png){height=350}
 
 ---
 
-## Pitch-angle Scattering: Cyclotron Resonance
+### Cyclotron Resonance
 Let us describe the particle velocity with $(v_{\perp}, v_{\parallel}, \phi)$ where $\phi$ is the gyrophase. From the equation of motion, we have
 $$
 \begin{cases}
@@ -481,7 +559,7 @@ $$
 
 ---
 
-## Pitch-angle Scattering: Constants of Motion
+### Constants of Motion
 Direct substitutions confirm that the following two quantities are constants of motion
 $$
 \begin{aligned}
@@ -496,19 +574,17 @@ $$
 $$
 which describe characteristics of pitch-angle scattering even with a finite amplitude wave.
 
-![height:350px center](figures/scattering1.png)
+![](figures/scattering1.png){height=350}
 
 ---
 
-## Pitch-angle Scattering: Diffusion in Momentum Space
+### Momentum-space Diffusion
 
 <!-- _header: Ref: Terasawa (1989), Karimabadi+ (1992) -->
 
-![height:600px center](figures/scattering2.png)
+![](figures/scattering2.png){height=600}
 
 ---
-
-## Pitch-angle Scattering: Diffusion in Momentum Space
 
 Particle transport in the presence of waves may be described by
 $$
@@ -552,7 +628,7 @@ $$
 
 ---
 
-## Diffusion-Convection Equation: Spatial Diffusion
+### Spatial Diffusion
 Let us consider a 1D system along B-field. The pitch-angle diffusion equation in the laboratory frame is given by
 $$
 \frac{\partial}{\partial t} f +
@@ -587,27 +663,6 @@ where $\kappa = v^2/(6 D_{\mu\mu})$ is the spatial diffusion coefficient.
 
 ---
 
-## Diffusion-Convection Equation: Adiabatic Energy Gain
-The momentum gain of particles in a finite flow divergence $\nabla \cdot \boldsymbol{V} \neq 0$
-$$
-\frac{1}{p} \frac{d p}{d t} = -
-\frac{1}{3} \nabla \cdot \boldsymbol{V}
-$$
-for both relativistic and non-relativistic particles.
+### Galactic Cosmic Rays and Solar Activity
 
-
-We finally obtain the following diffusion-convection equation (dropping the sbuscript for $f_0$)
-$$
-\frac{\partial}{\partial t} f +
-V \frac{\partial}{\partial x} f -
-\frac{1}{3} \frac{\partial V}{\partial x} \frac{\partial f}{\partial \ln p}=
-\frac{\partial}{\partial x}
-\left[ \kappa \frac{\partial}{\partial x} f \right],
-$$
-which describes the transport of energetic particles in a turbulent plasma.
-
----
-
-## Galactic Cosmic Rays and Solar Activity
-
-![height:550px center](figures/gcr-sunspot.png)
+![](figures/gcr-sunspot.png){height=600}
